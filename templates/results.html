@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h4>Best Market-Place Option</h4>
+<hr class="my-4" />
+<table id="proxy-table" class="display table responsvive text-left mt-4"
+    style="width: 100%">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th style='border-collapse: collapse;'>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in proxies %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>
+                <a href='{{row[3]}}' target="_blank"><input type="button"
+                        value="Lynk"></a>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(document).ready( function() {
+      $('#proxy-table').DataTable();
+    });
+  </script>
+{% endblock %}
